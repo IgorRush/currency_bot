@@ -21,8 +21,8 @@ def convert_currency(message):
     user_message = message.text.lower().split()
     if len(user_message) != 3:
       raise APIException('Неверное количество аргументов.')
-    base, quote, ammount = user_message
-    text = Currency.get_price(base, quote, ammount)
+    base, quote, amount = user_message
+    text = Currency.get_price(base, quote, amount)
   except APIException as e:
     bot.reply_to(message, f'❗ Ошибка ввода ❗\n{e}') 
   else:    
